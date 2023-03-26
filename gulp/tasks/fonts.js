@@ -46,16 +46,15 @@ function writeFontFaceCss(fontFile) {
 }
 
 function getFontWeightValue(fontWeightName) {
-    let fontWeightValue = 400;
     switch (fontWeightName.toLowerCase()) {
-        case "thin": fontWeightValue = 100; break;
-        case "extralight": fontWeightValue = 200; break;
-        case "light": fontWeightValue = 300; break;
-        case "medium": fontWeightValue = 500; break;
-        case "semibold": fontWeightValue = 600; break;
-        case "bold": fontWeightValue = 700; break;
-        case "extrabold": fontWeightValue = 800; break;
-        case "black": fontWeightValue = 900; break;
+        case "thin": return 100;
+        case "extralight": return 200;
+        case "light": return 300;
+        case "medium": return 500;
+        case "semibold": return 600;
+        case "bold": return 700;
+        case "extrabold": return 800;
+        case "black": return 900;
+        default: return 400;
     }
-    return fontWeightValue;
 }
