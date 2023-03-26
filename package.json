@@ -12,9 +12,6 @@
   "author": "Oleksandr073",
   "license": "ISC",
   "browserslist": "> 0.25%, not dead",
-  "dependencies": {
-    "gulp-cli": "^2.3.0"
-  },
   "devDependencies": {
     "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
