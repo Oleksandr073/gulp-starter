@@ -22,6 +22,7 @@
   - [Page 💻](#page-)
   - [Template 👇](#template-)
   - [Prerequisites 🔎](#prerequisites-)
+  - [Installation 📦](#installation-)
   - [Usage 🔧](#usage-)
     - [Building a distribution version](#building-a-distribution-version)
     - [Running project in the development mode](#running-project-in-the-development-mode)
@@ -46,6 +47,25 @@ try running the following command.
 npm -v && node -v
 8.11.0
 v16.16.0
+```
+
+## Installation 📦
+
+**BEFORE YOU INSTALL:** please read the [prerequisites](#prerequisites-)
+
+Create a repository from this template
+
+Clone the repository on your local machine:
+
+```
+git clone https://github.com/your-username/your-project-name.git
+cd your-project-name
+```
+
+To install and set up the packages, run:
+
+```
+npm i
 ```
 
 ## Usage 🔧
