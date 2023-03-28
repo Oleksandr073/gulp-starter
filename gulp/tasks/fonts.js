@@ -22,7 +22,7 @@ export function ttfToWoff() {
 }
 
 export function fontStyle() {
-    const fontFiles = fs.readdirSync(path.src.fonts);
+    const fontFiles = fs.readdirSync(path.src.fonts).filter(file => file.slice(file.lastIndexOf(".") + 1) === "ttf");
 
     if (fontFiles.length) {
         fs.writeFileSync(fontsFilePath, "");
