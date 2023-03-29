@@ -9,7 +9,7 @@ import htmlmin from "gulp-htmlmin";
 export function html() {
     return gulp.src(path.src.html)
         .pipe(fileinclude())
-        .pipe(plugins.replace(/href="\.\/svgicons\/(.+)\.svg"/, 'href="./sprite/sprite.svg#$1"'))
+        .pipe(plugins.replace(/href="\.\/svgicons\/(.+)\.svg"/g, 'href="./sprite/sprite.svg#$1"'))
         .pipe(plugins.gulpIf(
             isBuild,
             htmlmin({
