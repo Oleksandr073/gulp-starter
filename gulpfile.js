@@ -1,7 +1,6 @@
 import gulp from "gulp";
 import { path } from "./gulp/config/path.js";
 import { plugins } from "./gulp/config/plugins.js";
-import { isBuild } from "./gulp/constants/isBuild.js";
 
 import { files } from "./gulp/tasks/files.js";
 import { cleanDist } from "./gulp/tasks/clean.js";
@@ -9,7 +8,7 @@ import { html } from "./gulp/tasks/html.js";
 import { scss } from "./gulp/tasks/scss.js";
 import { js } from "./gulp/tasks/js.js";
 import { images } from "./gulp/tasks/images.js";
-import { ttfFonts, ttfToWoff, fontStyle } from "./gulp/tasks/fonts.js";
+import { fonts } from "./gulp/tasks/fonts.js";
 import { svgSprite } from "./gulp/tasks/svgSprite.js";
 import { server } from "./gulp/tasks/server.js";
 
@@ -29,8 +28,7 @@ function watcher() {
     watch(path.watch.svgicons, series(svgSprite, reload));
 }
 
-const convertTtf = isBuild ? ttfToWoff : cb => { cb(); };
-const mainTasks = parallel(ttfFonts, convertTtf, series(fontStyle, scss), files, html, svgSprite, js, images);
+const mainTasks = parallel(fonts, scss, files, html, svgSprite, js, images);
 const startServer = parallel(server, watcher);
 
 export const dev = series(cleanDist, mainTasks, startServer);
